@@ -4,7 +4,7 @@ import { useState } from "react";
 import { fetchAssetEvaluation, downloadEvaluationPdf, EvaluationPayload } from "@/lib/api";
 
 export default function HomePage() {
-  // 1. ESTADOS DEL SIMULADOR
+  // 1. ESTADOS DEL SIMULADOR (Sincronizados estrictamente con tu API original)
   const [formData, setFormData] = useState<EvaluationPayload>({
     distrito: "Nervión",
     precio: 285000,
@@ -12,7 +12,7 @@ export default function HomePage() {
     ingresos: 2600,
     metros: 65,
     euribor: 3.7,
-    differential: 0.8, // Sincronizado con tu interfaz de datos
+    diferencial: 0.8, // Corregido: manteniendo tu variable exacta en castellano
     plazo_anos: 25,
     cuota_comunidad: 80,
     otras_deudas: 0
@@ -26,7 +26,7 @@ export default function HomePage() {
   // 2. CONTROLADORES DE EVENTOS
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
-    const numericFields = ["precio", "ahorros", "ingresos", "metros", "euribor", "differential", "plazo_anos", "cuota_comunidad", "otras_deudas"];
+    const numericFields = ["precio", "ahorros", "ingresos", "metros", "euribor", "diferencial", "plazo_anos", "cuota_comunidad", "otras_deudas"];
     
     setFormData(prev => ({
       ...prev,
@@ -56,7 +56,7 @@ export default function HomePage() {
     try {
       await downloadEvaluationPdf(formData, formData.distrito);
     } catch (err) {
-      alert("Hubo un problema al procesar y maquetar tu informe técnico en PDF.");
+      alert("Hubo un problem al procesar y maquetar tu informe técnico en PDF.");
     } finally {
       setDownloadingPdf(false);
     }
