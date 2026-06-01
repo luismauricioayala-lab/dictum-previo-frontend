@@ -1,0 +1,96 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+    /* Paleta Premium Editorial - Optimizada para Conversión B2C */
+    --bg-main: #FAF9F5;          /* Crema suave muy elegante */
+    --bg-card: #FFFFFF;          /* Blanco puro para hacer destacar los módulos */
+    --text-main: #1E293B;        /* Pizarra oscuro para lectura fluida */
+    --text-muted: #64748B;       /* Gris medio para descripciones secundarias */
+    
+    /* Colores Institucionales de Confianza */
+    --color-brand: #0F172A;      /* Navy ultra profundo para cabeceras y títulos */
+    --color-accent: #C2410C;     /* Terracota/Óxido quemado (El color de conversión del botón) */
+    --color-accent-hover: #9A3412;
+    
+    /* Semáforos Amigables (Menos agresivos) */
+    --green-trust: #059669;
+    --amber-warning: #D97706;
+    --red-alert: #DC2626;
+    
+    --border-smooth: #E2E8F0;
+    --shadow-premium: 0 10px 30px -10px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* TÍTULOS EDITORIALES (Generan el impacto psicológico inicial) */
+.hero-title {
+    font-family: 'Georgia', serif;
+    color: var(--color-brand);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+}
+
+/* CONTENEDORES INVITANTES */
+.conversion-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-smooth);
+    border-radius: 16px;
+    box-shadow: var(--shadow-premium);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.conversion-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+}
+
+/* FORMULARIOS DE BAJA FRICCIÓN */
+.input-friendly {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-smooth);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+
+.input-friendly:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.1);
+}
+
+/* EL BOTÓN DE ACCIÓN INDISCUTIBLE */
+.btn-conversion {
+    background-color: var(--color-accent);
+    color: #FFFFFF;
+    padding: 14px 28px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(194, 65, 12, 0.2);
+}
+
+.btn-conversion:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(194, 65, 12, 0.3);
+}
+
+.btn-conversion:active {
+    transform: translateY(0);
+}
